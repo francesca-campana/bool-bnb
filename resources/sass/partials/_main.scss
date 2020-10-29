@@ -542,29 +542,36 @@ main {
           display: flex;
           justify-content: space-between;
           border-radius: 68px;
-          padding: 20px;
-          border: 2px solid #99e1d9;
-          /* background: #99e1d9; */
+          padding:5px 20px;
+          // border: 1px solid #fff;
+          background: #99e1d9;
           text-align: center;
           /* width: 100%; */
           align-items: center;
           margin-bottom: 20px;
 
           a {
-            color: #81ece1;
             text-decoration: none;
-            display: block;
-            text-transform: uppercase;
-
+            p {
+              color: #fff;
+              display: block;
+              // text-shadow: 1px 1px 1px #00000047;
+              margin-bottom:0;
+              // text-transform: uppercase;
+              &:hover {
+                color: $red-color;
+              }
+            }
 
           }
           hr {
             border: none;
-            border-left: 2px solid #99e1d9;
+            border-left: 2px solid #fff;
             height: 20px;
             width: 1px;
             margin-top: 0;
             margin-bottom: 0;
+            // box-shadow: 1px 1px 2px 0px #00000069;
           }
 
 

@@ -152,9 +152,9 @@
             <div class="card-body">
               @if ($logged_user->id === $apartment->user->id)
                 <div class="link-adm">
-                  <a href="{{route('admin.received-emails') }}"> Vai ai tuoi messaggi</a>
+                  <a href="{{route('admin.received-emails') }}"><p>Vai ai tuoi messaggi</p></a>
                   <hr>
-                  <a href="{{route('admin.user-apartments') }}"> Vai ai tuoi appartamenti</a>
+                  <a href="{{route('admin.user-apartments') }}"><p>Vai ai tuoi appartamenti</p></a>
                 </div>
 
               @else
