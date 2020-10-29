@@ -1,0 +1,48 @@
+// STILE FORM CREATE E UPDATE
+form {
+  width: 100%;
+}
+// .form-control {
+//   width: 100%;
+//   box-sizing: border-box;
+//   padding-left: 16px;
+//   line-height: 40px;
+//   height: 40px;
+//   border: 1px solid #ccc;
+//   border-radius: 3px;
+//   outline: none;
+//
+// }
+
+.form-group {
+  margin-bottom: 1em;
+  clear: both;
+
+  .ap-input-icon {
+    display: none;
+  }
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.split > * {
+  flex-grow: 1;
+}
+
+.split > *:first-child {
+  margin-right: 0.5em;
+}
+
+.split > *:last-child {
+  margin-left: 0.5em;
+}

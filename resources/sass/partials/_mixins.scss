@@ -1,0 +1,12 @@
+@mixin vertical_between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin hidden-partials-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
