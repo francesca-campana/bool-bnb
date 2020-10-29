@@ -706,6 +706,41 @@ main .show .show-container .apartment-email .card-body h3 {
   color: #f7567c;
 }
 
+main .show .show-container .apartment-informations .card-body .link-adm,
+main .show .show-container .apartment-map .card-body .link-adm,
+main .show .show-container .apartment-email .card-body .link-adm {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 68px;
+  padding: 20px;
+  border: 2px solid #99e1d9;
+  /* background: #99e1d9; */
+  text-align: center;
+  /* width: 100%; */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+main .show .show-container .apartment-informations .card-body .link-adm a,
+main .show .show-container .apartment-map .card-body .link-adm a,
+main .show .show-container .apartment-email .card-body .link-adm a {
+  color: #81ece1;
+  text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+}
+
+main .show .show-container .apartment-informations .card-body .link-adm hr,
+main .show .show-container .apartment-map .card-body .link-adm hr,
+main .show .show-container .apartment-email .card-body .link-adm hr {
+  border: none;
+  border-left: 2px solid #99e1d9;
+  height: 20px;
+  width: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 main .show .show-container .apartment-informations .card-body .info,
 main .show .show-container .apartment-map .card-body .info,
 main .show .show-container .apartment-email .card-body .info {
@@ -1092,6 +1127,11 @@ main #user-apartments .card-footer .status.disabled {
   main .show .show-container .map-query {
     display: block;
   }
+
+  main .show .show-container .map-query .apartment-map {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 674px) {
@@ -1167,6 +1207,11 @@ main #user-apartments .card-footer .status.disabled {
   main .show .show-container .map-query {
     display: block;
   }
+
+  main .show .show-container .map-query .apartment-map {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media (min-width: 675px) and (max-width: 767.98px) {
@@ -1192,6 +1237,11 @@ main #user-apartments .card-footer .status.disabled {
 
   main .show .show-container .map-query {
     display: block;
+  }
+
+  main .show .show-container .map-query .apartment-map {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   main #user-apartments .card-body {
@@ -1222,6 +1272,11 @@ main #user-apartments .card-footer .status.disabled {
 
   main .show .show-container .map-query {
     display: block;
+  }
+
+  main .show .show-container .map-query .apartment-map {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

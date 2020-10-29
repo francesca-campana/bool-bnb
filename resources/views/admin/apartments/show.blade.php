@@ -26,7 +26,7 @@
             <img src="{{ $apartment->image }}" alt="{{ $apartment->title }}">
           </div>
           <p><small class="text-muted">Autore: {{ $apartment->user->name }} - Creato il: {{ $apartment->created_at->format('d/m/y') }}</small></p>
-          <div class=" justify-content-between single-apartment" lat="{{ $apartment->latitude }}" lng="{{ $apartment->longitude }}">
+          <div class=" justify-content-between single-apartment d-none" lat="{{ $apartment->latitude }}" lng="{{ $apartment->longitude }}">
             <div>
               <h2 id="title" class="card-title">{{ $apartment->title }}</h2>
               <h4>{{ $apartment->address }}, {{ $apartment->city }}, {{ $apartment->zip }}</h4>
@@ -91,6 +91,18 @@
         <div class="col-lg-6 col-md-12 apartment-informations">
           <div class="description mb-2">
             <div class="card-body">
+              <div class=" justify-content-between single-apartment" lat="{{ $apartment->latitude }}" lng="{{ $apartment->longitude }}">
+                <div>
+                  <h2 id="title" class="card-title">{{ $apartment->title }}</h2>
+                  <h4>{{ $apartment->address }}, {{ $apartment->city }}, {{ $apartment->zip }}</h4>
+                </div>
+                @if ($logged_user->id === $apartment->user->id)
+                  <div class="btn-adm">
+                    <a class="btn-add_app" href="{{ route('admin.statistics', $apartment) }}"><i class="fas fa-chart-line"></i> Statistiche</a>
+                    <a class="btn-add_app" href="{{ route('admin.payment', $apartment) }}">Sponsorizza</a>
+                  </div>
+              @endif
+              </div>
               <ul class="info">
                 <li>Stanze: {{ $apartment->rooms }} |</li>
                 <li> Bagni: {{ $apartment->baths }} |</li>
@@ -139,8 +151,10 @@
           <div class="message-form mb-2">
             <div class="card-body">
               @if ($logged_user->id === $apartment->user->id)
-                <div class="">
+                <div class="link-adm">
                   <a href="{{route('admin.received-emails') }}"> Vai ai tuoi messaggi</a>
+                  <hr>
+                  <a href="{{route('admin.user-apartments') }}"> Vai ai tuoi appartamenti</a>
                 </div>
 
               @else
@@ -165,6 +179,21 @@
             <div id="success_message" class="message ">
               {{session('success')}}
             </div>
+          @endif
+        </div>
+        <div class="col-12 apartment-admin-function">
+          {{-- <a class="btn btn-primary" href="{{ route('admin.apartments.index')}}"> Torna alla lista appartamenti</a> --}}
+          @if ($logged_user->id === $apartment->user->id)
+            <ul class="button">
+              <li><a class="btn btn-add_app " href="{{ route('admin.apartments.edit', $apartment) }}"> Modifica Appartamento</a></li>
+              <li>
+                <form  action="{{ route('admin.apartments.destroy', $apartment) }}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <input class="btn btn-add_app delete" type="submit" value="Elimina">
+                </form>
+              </li>
+            </ul>
           @endif
         </div>
         <div class="col-md-12 map-query">
@@ -219,21 +248,7 @@
 
         </div>
 
-        <div class="col-12 apartment-admin-function">
-        {{-- <a class="btn btn-primary" href="{{ route('admin.apartments.index')}}"> Torna alla lista appartamenti</a> --}}
-        @if ($logged_user->id === $apartment->user->id)
-          <ul class="button">
-            <li><a class="btn btn-add_app " href="{{ route('admin.apartments.edit', $apartment) }}"> Modifica Appartamento</a></li>
-            <li>
-              <form  action="{{ route('admin.apartments.destroy', $apartment) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <input class="btn btn-add_app delete" type="submit" value="Elimina">
-              </form>
-            </li>
-          </ul>
-        @endif
-        </div>
+
 
       </div>
     </div>

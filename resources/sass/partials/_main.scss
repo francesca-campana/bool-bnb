@@ -538,6 +538,38 @@ main {
           font-size: 25px;
           color:#f7567c;
         }
+        .link-adm {
+          display: flex;
+          justify-content: space-between;
+          border-radius: 68px;
+          padding: 20px;
+          border: 2px solid #99e1d9;
+          /* background: #99e1d9; */
+          text-align: center;
+          /* width: 100%; */
+          align-items: center;
+          margin-bottom: 20px;
+
+          a {
+            color: #81ece1;
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+
+
+          }
+          hr {
+            border: none;
+            border-left: 2px solid #99e1d9;
+            height: 20px;
+            width: 1px;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+
+
+        }
 
         .info {
           padding-left:0;
@@ -905,6 +937,10 @@ main {
         }
         .map-query {
           display: block;
+          .apartment-map {
+            padding-left:0;
+            padding-right: 0;
+          }
         }
       }
     }
@@ -1007,6 +1043,10 @@ main {
         }
         .map-query {
           display: block;
+          .apartment-map {
+            padding-left:0;
+            padding-right: 0;
+          }
         }
       }
     }
@@ -1039,6 +1079,10 @@ main {
         }
         .map-query {
           display: block;
+          .apartment-map {
+            padding-left:0;
+            padding-right: 0;
+          }
         }
       }
     }
@@ -1087,6 +1131,10 @@ main {
         }
         .map-query {
           display: block;
+          .apartment-map {
+            padding-left:0;
+            padding-right: 0;
+          }
         }
       }
     }
